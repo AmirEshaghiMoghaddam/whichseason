@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Icon } from 'semantic-ui-react';
+import './SeasonDisplay.css';
 
 const findSeason = (lat, month) => {
      if (month > 2 && month < 9) {
@@ -13,13 +13,13 @@ const findSeason = (lat, month) => {
 const SeasonDisplay = props => {
 
      const season = findSeason(props.lat, new Date().getMonth());
-     const text = season === 'Winter' ? "It's Winter, Burr, it's chilly" : "It's Summer, Lets hit the beach";
+     const text = season === 'Winter' ? "It's Winter, Burr, it's chilly" : "It's Summer, Let's hit the beach";
      const icon = season === 'Winter' ? 'snowflake' : 'sun';
 
-     return (<div>
-          <i className={`${icon} massive icon`} />
+     return (<div className={`season-display ${season}`}>
+          <i className={`${icon} massive icon-left icon`} />
           <h1>{text}</h1>
-          <i className={`${icon} massive icon`} />
+          <i className={`${icon} massive icon-right icon`} />
      </div >);
 };
 
