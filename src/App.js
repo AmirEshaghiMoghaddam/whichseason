@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 
 class App extends Component {
 
-  // the first function which is called, best place for setting state
-  constructor(props) {
-    super(props)
-
-    this.state = { lat: null, errorMessage: '' }
-  }
+  // it is possible to define state without constructor() as well
+  state = { lat: null, errorMessage: '' }
 
   // best place for fetching
   componentDidMount() {
