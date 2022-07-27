@@ -22,7 +22,7 @@ class App extends Component {
     if (!this.state.errorMessage && this.state.lat) {
       return <SeasonDisplay lat={this.state.lat} />;
     }
-    return <Loading />
+    return <Loading message='Please allow location access' />
   }
 }
 
