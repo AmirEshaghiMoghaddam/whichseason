@@ -15,7 +15,8 @@ class App extends Component {
     )
   }
 
-  render() {
+  // better to empty render()
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>Error: {this.state.errorMessage}</div>
     }
@@ -23,6 +24,12 @@ class App extends Component {
       return <SeasonDisplay lat={this.state.lat} />;
     }
     return <Loading message='Please allow location access' />
+  }
+
+  render() {
+    return (<div>
+      {this.renderContent()}
+    </div>)
   }
 }
 
